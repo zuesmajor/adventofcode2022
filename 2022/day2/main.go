@@ -10,6 +10,7 @@ import (
 func main() {
 	player_score := 0
 	win_point := 6
+	draw_point := 3
 	rock_point := 1
 	paper_point := 2
 	scissor_point := 3
@@ -26,11 +27,11 @@ func main() {
 		player_hand := string(scanner.Text()[2])
 
 		if elf_hand == "A" && player_hand == "X" {
-			player_score += (1 + 3)
+			player_score += (rock_point + draw_point)
 		} else if elf_hand == "B" && player_hand == "Y" {
-			player_score += (2 + 3)
+			player_score += (paper_point + draw_point)
 		} else if elf_hand == "C" && player_hand == "Z" {
-			player_score += (3 + 3)
+			player_score += (scissor_point + draw_point)
 			// end of draw block
 		} else if player_hand == "X" {
 			if elf_hand == "C" {
